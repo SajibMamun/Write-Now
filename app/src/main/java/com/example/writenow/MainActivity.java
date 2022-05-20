@@ -2,6 +2,7 @@ package com.example.writenow;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -13,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     com.google.android.material.textfield.TextInputEditText emailet, passwordet;
     Button loginbtn;
     TextView signuptvbtn;
-
     String email, password;
 
     @Override
@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         signuptvbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,SignUpActivity.class);
+                startActivity(intent);
+                finish();
 
 
             }
