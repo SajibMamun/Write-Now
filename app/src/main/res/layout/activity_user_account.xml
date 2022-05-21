@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserAccount">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:text="Welcome"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:textSize="30sp"
+        android:textColor="#2EA5FF"
+        android:id="@+id/WelcomeTV"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:text=""
+        android:textSize="20dp"
+        android:textColor="#2EA5FF"
+        android:id="@+id/userEmailTv"
+        android:layout_below="@id/WelcomeTV"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logoutbtnid"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="30dp"
+        android:text="Logout"
+        />
+
+</RelativeLayout>

@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
 
-
             }
         });
     }
@@ -79,14 +78,14 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
 
-
             // for signing use signInWithEmailAndPassword
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-
-                        Toast.makeText(MainActivity.this, "Login Successfully" , Toast.LENGTH_SHORT).show();
+                //Intent to go user account page
+                        Intent intent = new Intent(MainActivity.this, UserAccount.class);
+                        startActivity(intent);
 
                     } else {
                         Toast.makeText(MainActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
