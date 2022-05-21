@@ -1,5 +1,6 @@
 package com.example.writenow;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,11 +10,19 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class SignUpActivity extends AppCompatActivity {
     com.google.android.material.textfield.TextInputEditText emailetsignup, passwordetsignup, confirmpasswordetsignup;
     Button Signupbtn;
 
     String email, password, confirmpassword;
+
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +34,9 @@ public class SignUpActivity extends AppCompatActivity {
         confirmpasswordetsignup = findViewById(R.id.confirmpasswordetsignupid);
         Signupbtn = findViewById(R.id.SignUpButtonid);
 
+        //FirebaseAuth Object.
+        mAuth = FirebaseAuth.getInstance();
+
 
         Signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
                 email = emailetsignup.getText().toString().trim();
                 password = passwordetsignup.getText().toString().trim();
                 confirmpassword = confirmpasswordetsignup.getText().toString().trim();
+
 
                 if (email.length() == 0) {
 
@@ -54,7 +67,25 @@ public class SignUpActivity extends AppCompatActivity {
                     confirmpasswordetsignup.setError("password doesn't match");
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "Sign Up successfully", Toast.LENGTH_SHORT).show();
+
+                    //Signup the user with this email and password
+                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+
+                            if (task.isSuccessful()) {
+                                //Firebaseuser object will store user details like email,password and other profile info
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                Toast.makeText(SignUpActivity.this, "Sign Up Done", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                Toast.makeText(SignUpActivity.this, "Error: " + task.getException(), Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
+
+
                 }
 
 

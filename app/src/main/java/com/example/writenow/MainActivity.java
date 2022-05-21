@@ -10,11 +10,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
     com.google.android.material.textfield.TextInputEditText emailet, passwordet;
     Button loginbtn;
     TextView signuptvbtn;
     String email, password;
+    FirebaseAuth mAuth;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
