@@ -7,23 +7,49 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/appnametv"
+        android:id="@+id/appnametv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:fontFamily="@font/fallingskyblack"
+        android:layout_marginTop="70dp"
         android:gravity="center"
-        android:text="Write Now"
+        android:text="Join Us!"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textColor="#2EA5FF"
         android:textSize="50sp" />
+    <TextView
+        android:layout_below="@id/appnametv1"
+        android:id="@+id/appnametv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Start Writing Notes, Today"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:textColor="#2EA5FF"
+        android:textSize="30sp"
+        android:layout_marginBottom="10dp"/>
+
+    <ProgressBar
+        android:id="@+id/Progressbarid"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appnametv2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#2EA5FF"
+        android:visibility="invisible" />
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/Emailedit"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/appnametv"
+        android:layout_below="@id/Progressbarid"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
@@ -47,7 +73,6 @@
         android:layout_below="@id/Emailedit"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
         android:hint="Password">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -61,12 +86,24 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
-        android:id="@+id/loginbuttonid"
+    <TextView
+        android:id="@+id/forgotpasswordid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:text="forgot password?" />
+
+    <Button
+        android:id="@+id/loginbuttonid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgotpasswordid"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="login" />
 
     <TextView

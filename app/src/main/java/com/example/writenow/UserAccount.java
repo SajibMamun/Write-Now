@@ -23,6 +23,7 @@ public class UserAccount extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
+    Button Updatepassword,UpdateEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

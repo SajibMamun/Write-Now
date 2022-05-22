@@ -8,14 +8,15 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.writenow.UpdateActivity.ForgotPassword;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     com.google.android.material.textfield.TextInputEditText emailet, passwordet;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     TextView signuptvbtn;
     String email, password;
     FirebaseAuth mAuth;
+    ProgressBar progressBar;
+    TextView forgotpassbtn;
 
 
     @Override
@@ -34,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         emailet = findViewById(R.id.emailetid);
         loginbtn = findViewById(R.id.loginbuttonid);
         signuptvbtn = findViewById(R.id.signuptvid);
+        progressBar = findViewById(R.id.Progressbarid);
+        forgotpassbtn = findViewById(R.id.forgotpasswordid);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -41,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 email = emailet.getText().toString().trim();
                 password = passwordet.getText().toString().trim();
-
-                checkvalidyformailandpassword(email, password);
+                checkvalidyformailandpassword(email, password, view);
 
             }
         });
@@ -59,11 +64,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        forgotpassbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ForgotPassword.class);
+                startActivity(intent);
+
+            }
+        });
+
+
     }
 
 
     //Validity check for mail and password
-    private void checkvalidyformailandpassword(String email, String password) {
+    private void checkvalidyformailandpassword(String email, String password, View view) {
         if (email.length() == 0) {
 
             emailet.setError("enter your email");
@@ -76,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
             passwordet.setError("enter your 8 digit password");
 
         } else {
+            progressBar.setVisibility(view.VISIBLE);
 
 
             // for signing use signInWithEmailAndPassword
@@ -83,11 +101,13 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                //Intent to go user account page
+                        //Intent to go user account page
+                        progressBar.setVisibility(view.INVISIBLE);
                         Intent intent = new Intent(MainActivity.this, UserAccount.class);
                         startActivity(intent);
 
                     } else {
+                        progressBar.setVisibility(view.INVISIBLE);
                         Toast.makeText(MainActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                     }
 

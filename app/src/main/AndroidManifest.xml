@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WriteNow">
         <activity
+            android:name=".UpdateActivity.UpdateEmail"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateActivity.UpdatePassword"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateActivity.ForgotPassword"
+            android:exported="false" />
+        <activity
             android:name=".UserAccount"
             android:exported="false" />
         <activity
