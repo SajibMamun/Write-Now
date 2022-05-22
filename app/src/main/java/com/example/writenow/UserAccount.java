@@ -6,24 +6,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class UserAccount extends AppCompatActivity {
-
     TextView emailtv;
     Button logoutbtn;
     Context context;
 
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
-    Button Updatepassword,UpdateEmail;
+   Button Updatepasswordbtn,UpdateEmailbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,8 @@ public class UserAccount extends AppCompatActivity {
         emailtv = findViewById(R.id.userEmailTv);
         logoutbtn = findViewById(R.id.logoutbtnid);
         context = this;
+        Updatepasswordbtn=findViewById(R.id.UpdatePasswordButtonid);
+        UpdateEmailbtn=findViewById(R.id.UpdateEmailbuttonid);
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -51,6 +53,28 @@ public class UserAccount extends AppCompatActivity {
 
             }
         });
+
+        UpdateEmailbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(UserAccount.this, updateEmail.class);
+                startActivity(intent);
+
+            }
+        });
+
+        Updatepasswordbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserAccount.this, UpdatePassword.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
 
     }
 

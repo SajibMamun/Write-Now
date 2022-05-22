@@ -12,20 +12,19 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.writenow.UpdateActivity.ForgotPassword;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-    com.google.android.material.textfield.TextInputEditText emailet, passwordet;
-    Button loginbtn;
-    TextView signuptvbtn;
-    String email, password;
-    FirebaseAuth mAuth;
+       com.google.android.material.textfield.TextInputEditText emailet, passwordet;
+      Button loginbtn;
+     TextView signuptvbtn;
+     String email, password;
+     FirebaseAuth mAuth;
     ProgressBar progressBar;
-    TextView forgotpassbtn;
+      TextView forgotpassbtn;
 
 
     @Override
