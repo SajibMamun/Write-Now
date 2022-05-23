@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         //Intent to go user account page
                         progressBar.setVisibility(view.INVISIBLE);
-                        Intent intent = new Intent(MainActivity.this, UserAccount.class);
+                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                         startActivity(intent);
 
                     } else {

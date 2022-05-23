@@ -44,4 +44,7 @@ dependencies {
     //Firebase auth
     implementation 'com.google.firebase:firebase-auth:21.0.4'
 
+    //Firebase Database
+    implementation 'com.google.firebase:firebase-database:20.0.5'
+
 }

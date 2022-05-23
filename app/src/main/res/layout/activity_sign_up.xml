@@ -7,27 +7,74 @@
     tools:context=".SignUpActivity">
 
     <TextView
+        android:id="@+id/signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:text=" Welcome "
+        android:textAlignment="center"
+        android:textColor="#2EA5FF"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_below="@id/signup"
         android:id="@+id/signuptv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginRight="20dp"
-      android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:gravity="center"
-        android:text=" Create new Account"
+        android:text="One Step , Sign Up!"
         android:textAlignment="center"
         android:textColor="#2EA5FF"
-        android:textSize="40sp" />
+        android:textSize="20sp"
+      />
+
+    <ProgressBar
+        android:id="@+id/Progressbarid"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signuptv"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#2EA5FF"
+        android:visibility="invisible" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Username"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Progressbarid"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Full Name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/UserNameid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/Emailedit"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/signuptv"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_below="@id/Username"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
         android:hint="Email">
 
@@ -47,8 +94,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Emailedit"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
         android:hint="Password">
 
@@ -61,14 +108,15 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/againpassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
         android:hint="Confirm Password">
 
@@ -85,10 +133,12 @@
 
     <Button
         android:id="@+id/SignUpButtonid"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/againpassword"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:text="Sign Up" />
 
 

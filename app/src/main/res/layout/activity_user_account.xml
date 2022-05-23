@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="Welcome"
+        android:text="Hi !"
         android:textAlignment="center"
         android:textColor="#2EA5FF"
         android:textSize="30sp"
@@ -24,33 +24,26 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/WelcomeTV"
         android:gravity="center"
-        android:text=""
+        android:text="What would you like to change ?"
         android:textAlignment="center"
         android:textColor="#2EA5FF"
         android:textSize="20dp" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:padding="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        app:cardCornerRadius="10dp">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_below="@id/userEmailTv">
 
             <Button
                 android:id="@+id/UpdateEmailbuttonid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginRight="30dp"
-
                 android:backgroundTint="@color/white"
                 android:text="Update Email"
                 android:textColor="#2EA5FF" />
@@ -63,14 +56,14 @@
 
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:backgroundTint="@color/white"
                 android:text="Update Password"
                 android:textColor="#2EA5FF" />
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
 
 
     <Button

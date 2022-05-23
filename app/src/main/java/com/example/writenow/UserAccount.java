@@ -91,6 +91,8 @@ public class UserAccount extends AppCompatActivity {
 
                         //forsignout
                         firebaseAuth.signOut();
+                        Intent intent=new Intent(UserAccount.this,MainActivity.class);
+                        startActivity(intent);
                         ((Activity) context).finish();
 
                     }

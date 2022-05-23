@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".updateEmail">
+
     <TextView
         android:id="@+id/tv1"
         android:layout_width="match_parent"
@@ -16,8 +17,8 @@
         android:textAlignment="center"
         android:textColor="#2EA5FF"
         android:textSize="30sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
+
     <ProgressBar
         android:id="@+id/Progressbarid"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
@@ -32,16 +33,14 @@
         android:visibility="invisible" />
 
 
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/oldEmail"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Progressbarid"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
         android:hint="old Email">
 
@@ -56,16 +55,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/newEmail"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/oldEmail"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
         android:hint="New Email">
 
@@ -77,15 +74,16 @@
 
             />
     </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/UpdateEmailbuttonid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/newEmail"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="30dp"
         android:text="Update Email" />
 
 </RelativeLayout>
