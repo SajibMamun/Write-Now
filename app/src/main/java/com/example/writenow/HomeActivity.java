@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     Button createnotebutton;
     RecyclerView recyclerView;
     ArrayList<Note> arrayList;
+    ProgressBar progressBar;
     Context context;
 
     @Override
@@ -41,6 +43,7 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerviewid);
         arrayList=new ArrayList<>();
         context=this;
+        progressBar=findViewById(R.id.Progressbarid);
 
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -64,6 +67,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
+        progressBar.setVisibility(View.VISIBLE);
         /////////readNotes
         readnotesfromDatabase();
         ///////////////////////////////////////
@@ -100,13 +104,13 @@ noteReference.addValueEventListener(new ValueEventListener() {
         //here snapshot contains noteid and notes in database
         Note note;
         for (DataSnapshot noteSnapshot:snapshot.getChildren()){
+            progressBar.setVisibility(View.INVISIBLE);
              note=noteSnapshot.getValue(Note.class); //pass that value in the constructor of Note class
 
           //  Toast.makeText(getApplicationContext(),"note: "+note.noteContent,Toast.LENGTH_SHORT).show();
 
             //Now add note to the arraylist for recyclerview
             arrayList.add(note);
-
             NoteAdapter noteAdapter=new NoteAdapter(arrayList,context);
             recyclerView.setAdapter(noteAdapter);
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".HomeActivity"
+    android:background="#F3F3F7">
 
 
     <TextView
@@ -13,14 +14,27 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
-        android:layout_marginBottom="30dp"
         android:layout_marginRight="20dp"
-    android:text="Hi"
-    android:textAlignment="center"
-    android:gravity="center"
-    android:textStyle="bold"
-    android:textColor="#2EA5FF"
-    android:textSize="25sp" />
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="Hi"
+        android:textAlignment="center"
+        android:textColor="#2F2C55"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <ProgressBar
+        android:id="@+id/Progressbarid"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nametvid"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="5dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#2F2C55"
+        android:visibility="invisible" />
+
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -28,11 +42,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/createnotebtn"
-        android:layout_below="@id/nametvid"
+        android:layout_below="@id/Progressbarid"
         android:layout_margin="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp" />

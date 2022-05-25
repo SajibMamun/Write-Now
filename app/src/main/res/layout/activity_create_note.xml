@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateNoteActivity">
+    tools:context=".CreateNoteActivity"
+    android:background="#F3F3F7">
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/title"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
