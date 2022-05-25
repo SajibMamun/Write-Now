@@ -13,13 +13,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:text="Edit Your Notes"
         android:textAlignment="center"
         android:textColor="#2F2C55"
         android:textSize="30sp"
         android:textStyle="bold" />
+    <ProgressBar
+        android:id="@+id/Progressbarid"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#2F2C55"
+        android:visibility="invisible"
+        android:layout_marginBottom="30dp"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edittitle"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -27,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_below="@id/tv1"
+        android:layout_below="@id/Progressbarid"
         android:layout_marginBottom="10dp"
         android:hint="Edit Title"
         >
@@ -62,19 +75,19 @@
             android:ems="5"
             android:padding="60dp"
 
-
             />
     </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/Editsavenowbtnid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Edit"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_below="@id/Editnote"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
         android:autoSizePresetSizes="true"
+        android:text="Save"
 
         />
 

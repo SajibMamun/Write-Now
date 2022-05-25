@@ -1,6 +1,8 @@
 package com.example.writenow;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,6 +51,38 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             }
         });
 
+
+
+        holder.deletebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder builder =new AlertDialog.Builder(context);
+                builder.setMessage("Are you sure want to delete the note? ")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                ((HomeActivity)context).deleteNotefromFirebase(note.getNoteID());
+
+
+
+                            }
+                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+
+
+
+                    }
+                });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+
+
+            }
+        });
+
     }
 
     @Override
@@ -58,13 +92,14 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView notetitle,noteContent;
-        ImageView Edittvbtn;
+        ImageView Edittvbtn,deletebtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             notetitle=itemView.findViewById(R.id.itemtitleid);
             noteContent=itemView.findViewById(R.id.notecontentitemid);
             Edittvbtn=itemView.findViewById(R.id.Editbtnid);
+            deletebtn=itemView.findViewById(R.id.deletebtnid);
         }
     }
 }

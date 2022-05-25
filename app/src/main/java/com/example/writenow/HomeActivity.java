@@ -9,12 +9,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -67,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-        progressBar.setVisibility(View.VISIBLE);
+
         /////////readNotes
         readnotesfromDatabase();
         ///////////////////////////////////////
@@ -76,6 +82,10 @@ public class HomeActivity extends AppCompatActivity {
         //Recyclerview
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
+        progressBar.setVisibility(View.VISIBLE);
+
+
+
 
 
 
@@ -93,6 +103,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void readnotesfromDatabase() {
+
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
@@ -102,24 +113,25 @@ noteReference.addValueEventListener(new ValueEventListener() {
     @Override
     public void onDataChange(@NonNull DataSnapshot snapshot) {
         //here snapshot contains noteid and notes in database
+        arrayList.clear();
         Note note;
         for (DataSnapshot noteSnapshot:snapshot.getChildren()){
             progressBar.setVisibility(View.INVISIBLE);
+
              note=noteSnapshot.getValue(Note.class); //pass that value in the constructor of Note class
 
             //here we can get noteid by  using Exclude in Note class
             note.setNoteID(noteSnapshot.getKey());
-          //Toast.makeText(getApplicationContext(),"note: "+note.getNoteContent(),Toast.LENGTH_SHORT).show();
+          //Toast.makeText(getApplicationContext(),"note: "+note.getNoteContent(),Toast.LENGTH_SHORT).show()
+
 
             //Now add note to the arraylist for recyclerview
             arrayList.add(note);
-            NoteAdapter noteAdapter=new NoteAdapter(arrayList,context);
-            recyclerView.setAdapter(noteAdapter);
-
-
 
 
         }
+        NoteAdapter noteAdapter=new NoteAdapter(arrayList,context);
+        recyclerView.setAdapter(noteAdapter);
 
 
 
@@ -135,5 +147,61 @@ noteReference.addValueEventListener(new ValueEventListener() {
 });
 
 
+    }
+
+    public void deleteNotefromFirebase(String noteID) {
+        FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        DatabaseReference noteRefrence=firebaseDatabase.getReference().child("Users").child(firebaseUser.getUid()).child("Notes");
+        DatabaseReference particularNote=noteRefrence.child(noteID);
+
+        //Delete Method
+        particularNote.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful())
+                {
+                    Toast.makeText(getApplicationContext(),"Note Deleted Successfully",Toast.LENGTH_SHORT).show();
+
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),""+task.getException(),Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.Logoutid:
+                FirebaseAuth.getInstance().signOut();
+                this.finish();
+                Intent logoutintent=new Intent(HomeActivity.this,MainActivity.class);
+                startActivity(logoutintent);
+
+            case R.id.ManageAccountid:
+                Intent intent=new Intent(HomeActivity.this,UserAccount.class);
+                startActivity(intent);
+
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

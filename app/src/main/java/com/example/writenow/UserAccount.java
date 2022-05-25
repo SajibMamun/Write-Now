@@ -29,8 +29,12 @@ public class UserAccount extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_account);
+
+
+
         emailtv = findViewById(R.id.userEmailTv);
-        logoutbtn = findViewById(R.id.logoutbtnid);
+        logoutbtn=findViewById(R.id.logoutbtnid);
+
         context = this;
         Updatepasswordbtn=findViewById(R.id.UpdatePasswordButtonid);
         UpdateEmailbtn=findViewById(R.id.UpdateEmailbuttonid);

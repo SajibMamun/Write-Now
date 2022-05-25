@@ -53,7 +53,7 @@ ProgressBar progressBar;
                 password = passwordetsignup.getText().toString().trim();
                 confirmpassword = confirmpasswordetsignup.getText().toString().trim();
                 name=usernameet.getText().toString().trim();
-                progressBar.setVisibility(view.VISIBLE);
+
 
 
                 if(name.isEmpty())
@@ -80,6 +80,7 @@ ProgressBar progressBar;
                     confirmpasswordetsignup.setError("password doesn't match");
 
                 } else {
+                    progressBar.setVisibility(view.VISIBLE);
 
                     //Signup the user with this email and password
                     //For Sign Up use createUserWithEmailAndPassword

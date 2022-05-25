@@ -31,39 +31,38 @@
         android:textSize="20dp" />
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/userEmailTv"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/UpdateEmailbuttonid"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_below="@id/userEmailTv">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="30dp"
+            android:backgroundTint="#7583FF"
+            android:text="Update Email"
+            android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/UpdateEmailbuttonid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginRight="30dp"
-                android:backgroundTint="#7583FF"
-                android:text="Update Email"
-                android:textColor="@color/white" />
+        <Button
+            android:id="@+id/UpdatePasswordButtonid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
 
-            <Button
-                android:id="@+id/UpdatePasswordButtonid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="#7583FF"
-                android:text="Update Password"
-                android:textColor="@color/white" />
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#7583FF"
+            android:text="Update Password"
+            android:textColor="@color/white" />
 
 
-        </LinearLayout>
+    </LinearLayout>
 
 
 
