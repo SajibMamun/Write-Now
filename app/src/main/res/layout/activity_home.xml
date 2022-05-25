@@ -7,23 +7,42 @@
     tools:context=".HomeActivity">
 
 
-
     <TextView
         android:id="@+id/nametvid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"
+    android:text="Hi"
+    android:textAlignment="center"
+    android:gravity="center"
+    android:textStyle="bold"
+    android:textColor="#2EA5FF"
+    android:textSize="25sp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/createnotebtn"
+        android:layout_below="@id/nametvid"
         android:layout_margin="10dp"
-        android:text="Hi"
-        android:textStyle="bold"
-        android:textColor="#2EA5FF"
-        android:textSize="20sp" />
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp" />
+
     <Button
         android:id="@+id/createnotebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create a new note"
         android:layout_alignParentBottom="true"
-        />
+        android:text="Create a new note" />
 
 
 </RelativeLayout>
