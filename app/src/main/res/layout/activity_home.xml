@@ -55,7 +55,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Create a new note" />
+        android:text="Write a new note"
+        android:padding="15dp"
+        android:textSize="15sp"
+        />
 
 
 </RelativeLayout>

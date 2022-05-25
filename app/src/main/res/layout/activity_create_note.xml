@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".CreateNoteActivity"
     android:background="#F3F3F7">
+
+    <TextView
+
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="Write Your Notes"
+        android:textAlignment="center"
+        android:textColor="#2F2C55"
+        android:textSize="30sp"
+        android:textStyle="bold" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/title"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -15,7 +29,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
         android:hint="Title"
-        android:layout_marginTop="100dp"
+        android:layout_below="@id/tv1"
         >
 
     <com.google.android.material.textfield.TextInputEditText

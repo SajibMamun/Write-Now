@@ -33,13 +33,17 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.notetitle.setText(notedatalist.get(position).noteTitle);
-        holder.noteContent.setText(notedatalist.get(position).noteContent);
+        final  Note note=notedatalist.get(position);
+        holder.notetitle.setText(note.noteTitle);
+        holder.noteContent.setText(note.noteContent);
         holder.Edittvbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent=new Intent(context,EditNoteAcitvity.class);
+                intent.putExtra("title",note.getNoteTitle());
+                intent.putExtra("content",note.getNoteContent());
+                intent.putExtra("id",note.getNoteID());
                 context.startActivity(intent);
 
             }

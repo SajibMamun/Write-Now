@@ -107,7 +107,9 @@ noteReference.addValueEventListener(new ValueEventListener() {
             progressBar.setVisibility(View.INVISIBLE);
              note=noteSnapshot.getValue(Note.class); //pass that value in the constructor of Note class
 
-          //  Toast.makeText(getApplicationContext(),"note: "+note.noteContent,Toast.LENGTH_SHORT).show();
+            //here we can get noteid by  using Exclude in Note class
+            note.setNoteID(noteSnapshot.getKey());
+          //Toast.makeText(getApplicationContext(),"note: "+note.getNoteContent(),Toast.LENGTH_SHORT).show();
 
             //Now add note to the arraylist for recyclerview
             arrayList.add(note);

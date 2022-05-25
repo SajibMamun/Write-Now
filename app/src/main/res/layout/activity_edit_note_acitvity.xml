@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,4 +7,75 @@
     tools:context=".EditNoteAcitvity"
     android:background="#F3F3F7">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="Edit Your Notes"
+        android:textAlignment="center"
+        android:textColor="#2F2C55"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edittitle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@id/tv1"
+        android:layout_marginBottom="10dp"
+        android:hint="Edit Title"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edittitleid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Editnote"
+        android:layout_below="@id/edittitle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:hint="write here..."
+        android:layout_marginTop="30dp"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Editwritenoteid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="5"
+            android:padding="60dp"
+
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/Editsavenowbtnid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Edit"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@id/Editnote"
+        android:layout_marginTop="10dp"
+        android:autoSizePresetSizes="true"
+
+        />
+
+</RelativeLayout>
