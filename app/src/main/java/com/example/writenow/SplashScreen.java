@@ -15,6 +15,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        getSupportActionBar().hide();
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
         Handler handler = new Handler();
@@ -23,7 +24,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 if (firebaseUser != null) {
 
-                    Intent intent = new Intent(SplashScreen.this, UserAccount.class);
+                    Intent intent = new Intent(SplashScreen.this, HomeActivity.class);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(SplashScreen.this, MainActivity.class);

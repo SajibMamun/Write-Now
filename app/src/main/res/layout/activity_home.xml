@@ -6,26 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:id="@+id/welcometv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Welcome !"
-        android:textColor="#2EA5FF"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+
 
     <TextView
         android:id="@+id/nametvid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/welcometv"
-        android:layout_marginLeft="20dp"
-        android:text=""
+        android:layout_margin="10dp"
+        android:text="Hi"
+        android:textStyle="bold"
         android:textColor="#2EA5FF"
         android:textSize="20sp" />
+    <Button
+        android:id="@+id/createnotebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create a new note"
+        android:layout_alignParentBottom="true"
+        />
 
 
 </RelativeLayout>
