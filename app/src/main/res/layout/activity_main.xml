@@ -15,23 +15,24 @@
         android:gravity="center"
         android:text="Join Us!"
         android:textAlignment="center"
-        android:textColor="#2F2C55"
+        android:textColor="#F9546B"
         android:textSize="50sp"
         android:textStyle="bold" />
+
     <TextView
-        android:layout_below="@id/appnametv1"
         android:id="@+id/appnametv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Start Writing Notes, Today"
-        android:textStyle="italic"
-        android:textAlignment="center"
-        android:textColor="#2F2C55"
-        android:textSize="30sp"
+        android:layout_below="@id/appnametv1"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="Start Writing Notes, Today"
+        android:textAlignment="center"
+        android:textColor="#F9546B"
+        android:textSize="30sp"
+        android:textStyle="italic" />
 
     <ProgressBar
         android:id="@+id/Progressbarid"
@@ -43,7 +44,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="20dp"
         android:indeterminate="true"
-        android:indeterminateTint="#2F2C55"
+        android:indeterminateTint="#F9546B"
         android:visibility="invisible" />
 
 

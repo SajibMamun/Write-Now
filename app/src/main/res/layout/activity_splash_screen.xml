@@ -14,16 +14,16 @@
         android:layout_height="200dp"
         android:layout_centerInParent="true"
         android:src="@drawable/write" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Write Now"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:textColor="#7583FF"
         android:layout_below="@id/imag1"
         android:gravity="center"
-        />
+        android:text="Write Now"
+        android:textColor="#F9546B"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

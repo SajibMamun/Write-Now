@@ -194,6 +194,7 @@ noteReference.addValueEventListener(new ValueEventListener() {
                 Intent logoutintent=new Intent(HomeActivity.this,MainActivity.class);
                 startActivity(logoutintent);
 
+
             case R.id.ManageAccountid:
                 Intent intent=new Intent(HomeActivity.this,UserAccount.class);
                 startActivity(intent);

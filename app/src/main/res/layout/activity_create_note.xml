@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="Write Your Notes"
         android:textAlignment="center"
-        android:textColor="#2F2C55"
+        android:textColor="#F9546B"
         android:textSize="30sp"
         android:textStyle="bold" />
     <ProgressBar
@@ -29,7 +29,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
         android:indeterminate="true"
-        android:indeterminateTint="#2F2C55"
+        android:indeterminateTint="#F9546B"
         android:visibility="invisible"
         android:layout_marginBottom="30dp"/>
     <com.google.android.material.textfield.TextInputLayout

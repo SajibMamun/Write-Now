@@ -15,7 +15,7 @@
         android:gravity="center"
         android:text="Hi !"
         android:textAlignment="center"
-        android:textColor="#2F2C55"
+        android:textColor="#F9546B"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -27,7 +27,7 @@
         android:gravity="center"
         android:text="What would you like to change ?"
         android:textAlignment="center"
-        android:textColor="#2F2C55"
+        android:textColor="#F9546B"
         android:textSize="20dp" />
 
 
@@ -44,7 +44,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="100dp"
             android:layout_marginRight="30dp"
-            android:backgroundTint="#7583FF"
+            android:backgroundTint="#F9546B"
             android:text="Update Email"
             android:textColor="@color/white" />
 
@@ -57,7 +57,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="#7583FF"
+            android:backgroundTint="#F9546B"
             android:text="Update Password"
             android:textColor="@color/white" />
 
